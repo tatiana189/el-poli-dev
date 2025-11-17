@@ -13,10 +13,13 @@ pipeline {
         }
 
         stage('Levantar contenedores con Docker Compose') {
-            steps {
-                sh 'docker compose -f infra/docker-compose.yml up -d'
-            }
+    steps {
+        dir('infra') {
+            sh 'docker compose up -d'
         }
+    }
+}
+
 
         stage('Verificar contenedores') {
             steps {
