@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "18"
+
+services:
+  - docker
+
+script:
+  - docker build -t elpolidev_backend ./backend
